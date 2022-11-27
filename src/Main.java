@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
         SelectionSort sorter = new SelectionSort();
         CarsOutput output = new CarsOutput();
+        TaxiDepotCostCalc costCalc = new TaxiDepotCostCalc();
+        SearchByMaxSpeed searchBySpeed = new SearchByMaxSpeed();
 
         SportCar supra = new SportCar(12.5, 400, 50000, "Toyota Supra");
         CivilianCar polik = new CivilianCar(9.5, 150, 10000, "Volkswagen Polo");
@@ -21,6 +23,11 @@ public class Main {
 
         sorter.selectionSort(cars);
         output.carsOutput(cars);
-
+        System.out.println("\nTaxi depot cost: " +
+                costCalc.costCalc(cars) + "\n");
+        System.out.println("Car with max speed" +
+                " between 300 and 700 mph: \n" +
+                searchBySpeed.searchBySpeed(cars,
+                        300, 700));
     }
 }
